@@ -19,6 +19,8 @@ class Teeth():
         return resized_image
     
     def detect_top_six_teeth_for_edit(self , image):
+        image = reshape_image(image)
+
         detector = ObjectDetector(loadPath="teeth_detector.svm")
         x,y,xb,yb = detector.detect(image)
         print(x,y,xb,yb)
@@ -45,6 +47,3 @@ def main():
         img = cv2.imread(f"./test_images/{image}")
         teeth.detect_top_six_teeth_for_edit(img)
         teeth.detect_each_tooth_for_edit(img,[155,162,447,275])
-
-if __name__ == "__main__":
-    main()
