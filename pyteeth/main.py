@@ -3,7 +3,7 @@ import os
 
 import cv2 
 
-from detector import ObjectDetector
+from pyteeth import ObjectDetector
 
 class Teeth():
     def __init__(self):
