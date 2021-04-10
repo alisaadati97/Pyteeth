@@ -19,7 +19,7 @@ class Teeth():
         return resized_image
     
     def detect_top_six_teeth_for_edit(self , image):
-        image = reshape_image(image)
+        image = self.reshape_image(image)
 
         detector = ObjectDetector(loadPath="teeth_detector.svm")
         x,y,xb,yb = detector.detect(image)
