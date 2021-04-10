@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
-  name = 'Pyteeth',         # How you named your package folder (MyLib)
-  packages = ['Pyteeth'],   # Chose the same as "name"
+  name = 'pyteeth',         # How you named your package folder (MyLib)
+  packages = ['pyteeth'],   # Chose the same as "name"
   version = '0.1',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'This package is design for detectiong top 6 teeth for designing a beautiful smile',   # Give a short description about your library
