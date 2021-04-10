@@ -8,6 +8,16 @@ from pyteeth import ObjectDetector
 class Teeth():
     def __init__(self):
         pass
+    def reshape_image(self , image):
+        if image.shape[0] < 1000 and image.shape[1] < 1000:
+            return image
+        if image.shape[0] > image.shape[1]:
+            ratio = 640 / image.shape[0] 
+        else : 
+            ratio = 640/ image.shape[1]
+        resized_image = cv2.resize(image, (0,0), fx=ratio, fy=ratio) 
+        return resized_image
+    
     def detect_top_six_teeth_for_edit(self , image):
         detector = ObjectDetector(loadPath="teeth_detector.svm")
         x,y,xb,yb = detector.detect(image)
