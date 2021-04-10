@@ -26,8 +26,9 @@ class Teeth():
         print(x,y,xb,yb)
         cv2.rectangle(image,(x,y),(xb,yb),(0,0,255),2)
         cv2.putText(image,"top6_teeth",(x+5,y-5),cv2.FONT_HERSHEY_SIMPLEX,1.0,(128,255,0),2)
-        cv2.imshow("Detected",image)
-        cv2.waitKey(0)
+    
+        
+        return image
 
     def detect_each_tooth_for_edit(self , image , coords):
         x , y , xb , yb = coords
@@ -37,8 +38,8 @@ class Teeth():
         print(w_step , x,y,xb,yb ,w)
         for x_line in range(x  , xb , w_step):
             cv2.line(image, (x_line, y), (x_line, yb), (0, 255, 0), thickness=2)
-        cv2.imshow("Detected",image)
-        cv2.waitKey(0)
+        
+        return image
 
 def main():
     images = os.listdir("test_images/")
