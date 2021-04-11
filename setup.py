@@ -2,9 +2,13 @@ from distutils.core import setup
 setup(
   name = 'pyteeth',         # How you named your package folder (MyLib)
   packages = ['pyteeth'],   # Chose the same as "name"
-  version = '0.124',      # Start with a small number and increase it with every change you make
+  version = '0.125',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'This package is design for detectiong top 6 teeth for designing a beautiful smile',   # Give a short description about your library
+  
+  package_data={'pyteeth': ['pyteeth/teeth_detector.svm']},
+  include_package_data=True,
+  
   author = 'Ali Saadati',                   # Type in your name
   author_email = 'alibalaei76@gmail.com',      # Type in your E-Mail
   url = 'https://github.com/alisaadati97/Pyteeth',   # Provide either the link to your github or to your website
