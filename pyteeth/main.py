@@ -40,11 +40,3 @@ class Teeth():
             cv2.line(image, (x_line, y), (x_line, yb), (0, 255, 0), thickness=2)
         
         return image
-
-def main():
-    images = os.listdir("test_images/")
-    for image in images:
-        teeth = Teeth()
-        img = cv2.imread(f"./test_images/{image}")
-        teeth.detect_top_six_teeth_for_edit(img)
-        teeth.detect_each_tooth_for_edit(img,[155,162,447,275])
