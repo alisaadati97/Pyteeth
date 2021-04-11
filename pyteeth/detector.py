@@ -1,3 +1,5 @@
+import os
+
 import dlib
 import cv2
 
@@ -12,7 +14,8 @@ class ObjectDetector(object):
 
         #load the trained detector (for testing)
         if loadPath is not None:
-            self._detector = dlib.simple_object_detector(loadPath)
+            base_path = os.path.abspath(os.path.dirname(__file__))
+            self._detector = dlib.simple_object_detector(base_path+"/"+loadPath)
 
     def _prepare_annotations(self,annotations):
         annots = []
