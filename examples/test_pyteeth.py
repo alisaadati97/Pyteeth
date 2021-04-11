@@ -26,7 +26,6 @@ class EditTestTop():
             cv2.line(self.edited_img, (x, 0), (x, self.edited_img.shape[0]), (0, 255, 0), thickness=2)
         if event == 1 :           
             self.circles.append((x,y))
-            print(self.circles)
             cv2.circle(self.edited_img,(x,y), 10, (0,0,255), -1)
             self.temp_image  = self.edited_img.copy()
 
@@ -73,8 +72,7 @@ class EditTestEach():
             cv2.line(self.edited_img, (0, y), (self.edited_img.shape[1], y), (0, 255, 0), thickness=2)
             cv2.line(self.edited_img, (x, 0), (x, self.edited_img.shape[0]), (0, 255, 0), thickness=2)
         if event == 1 :           
-            self.circles.append((x,y))
-            print(self.circles)
+            self.circles.append((x,y)
             cv2.circle(self.edited_img,(x,y), 10, (0,0,255), -1)
             self.temp_image  = self.edited_img.copy()
 
